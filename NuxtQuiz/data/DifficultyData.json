@@ -1,0 +1,22 @@
+[
+    {
+        "Text": "Very Easy",
+        "Color": "green-300"
+    },
+    {
+        "Text": "Easy",
+        "Color": "green-200"
+    },
+    {
+        "Text": "Medium",
+        "Color": "orange-300"
+    },
+    {
+        "Text": "Hard",
+        "Color": "red-300"
+    },
+    {
+        "Text": "MANGO",
+        "Color": "purple-300"
+    }
+]

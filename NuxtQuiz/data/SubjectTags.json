@@ -1,0 +1,25 @@
+{
+    "Math": {
+        "Color": "red-300"
+    },
+
+    "Reading": {
+        "Color": "Orange-300"
+    },
+
+    "History": {
+        "Color": "yellow-300"
+    },
+
+    "BrainRot": {
+        "Color": "purple-300"
+    },
+
+    "Italian": {
+        "Color": "purple-300"
+    },
+
+    "OG": {
+        "Color": "brown-300"
+    }
+}
