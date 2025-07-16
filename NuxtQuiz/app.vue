@@ -1,9 +1,10 @@
-
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <SearchBar/>
+    <SearchBar />
     <!-- <NuxtWelcome /> -->
     <NuxtPage />
+    <QuestionCard />
+    <TheFooter />
   </div>
 </template>
