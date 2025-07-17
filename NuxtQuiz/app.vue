@@ -2,6 +2,7 @@
   <div>
     <NuxtRouteAnnouncer />
     <SearchBar />
+    <QuizCard />
     <!-- <NuxtWelcome /> -->
     <NuxtPage />
     <QuestionCard />
