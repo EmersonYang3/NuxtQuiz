@@ -1,4 +1,8 @@
-<template></template>
+<template>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
+</template>
 
 <script lang="ts" setup>
 const { data, pending, error, refresh }: any = await useFetch(

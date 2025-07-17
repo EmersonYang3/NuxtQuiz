@@ -1,9 +1,15 @@
 @import "tailwindcss";
 @import "primeicons/primeicons.css";
 
+:root {
+  --color-off-black: #09090B;
+  --color-dark-gray: #27272A;
+}
+
 html, body {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-off-black);
 }

@@ -1,5 +1,8 @@
 <template>
-  <ChipComp></ChipComp>
+  <div>
+    <PageHeader />
+    <slot />
+  </div>
 </template>
 
 <script lang="ts" setup></script>
