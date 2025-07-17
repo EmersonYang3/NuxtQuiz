@@ -13,6 +13,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
+
 const fillerQuiz = ref({
   questionText: "67 Quiz",
   description: "This is a sample question for the quiz.",

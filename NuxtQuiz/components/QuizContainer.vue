@@ -1,24 +1,34 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4">
     <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
-      <QuizCard />
-      <!-- Add for -->
-      />
+      <QuizCard v-for="quiz in filteredQuizzes" :key="quiz.id" :quiz="quiz" />
     </div>
+    <p class="text-black">{{ filteredQuizzes }}</p>
   </div>
 </template>
 
-<script setup>
-import QuizCard from "./QuizCard.vue";
+<script setup lang="ts">
+import type { Quiz } from "~/utils/types";
+import Fuse from "fuse.js";
 
-const questions = [
-  {
-    questionText: "What is the capital of France?",
-    options: ["Paris", "Berlin", "Madrid"],
-  },
-  {
-    questionText: "Which planet is known as the Red Planet?",
-    options: ["Mars", "Venus", "Jupiter"],
-  },
-];
+const props = defineProps<{ searchfilter: string }>();
+
+const { data: quizzes } = await useFetch<Quiz[]>(
+  "http://127.0.0.1:8000/api/quizzes/"
+);
+
+const filteredQuizzes = computed(() => {
+  if (!quizzes.value) return [];
+
+  const search = props.searchfilter.trim();
+  if (!search) return quizzes.value;
+
+  const fuse = new Fuse(quizzes.value, {
+    keys: ["title", "description", "subject_tags"],
+    threshold: 0.4,
+  });
+
+  const results = fuse.search(search);
+  return results.map((result) => result.item);
+});
 </script>

@@ -1,5 +1,7 @@
 <template>
-  <nav class="flex sticky h-16 border-b border-b-gray-700 pl-3">
+  <nav
+    class="sticky top-0 z-50 flex h-16 bg-black border-b border-b-gray-700 pl-3"
+  >
     <button
       class="font-bold text-white text-2xl cursor-pointer"
       @click="goHome"

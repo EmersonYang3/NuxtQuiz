@@ -1,9 +1,7 @@
 <template>
   <footer class="bg-gray-950 text-white border-t border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Main Footer Content -->
       <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <!-- Company Info -->
         <div class="space-y-6">
           <div class="flex items-center space-x-3">
             <div
@@ -36,7 +34,6 @@
           </div>
         </div>
 
-        <!-- Quick Links -->
         <div class="space-y-6">
           <h3 class="text-lg font-semibold text-white">Product</h3>
           <ul class="space-y-3">
@@ -54,7 +51,6 @@
           </ul>
         </div>
 
-        <!-- Resources -->
         <div class="space-y-6">
           <h3 class="text-lg font-semibold text-white">Resources</h3>
           <ul class="space-y-3">
@@ -72,20 +68,18 @@
           </ul>
         </div>
 
-        <!-- Newsletter & Contact -->
         <div class="space-y-6">
           <h3 class="text-lg font-semibold text-white">
-            If You're A Girl, Fill Out
+            If You're A Girl, Please Fill Out
           </h3>
           <p class="text-gray-400 text-sm">We Need ABGS and Snow Bunnies</p>
 
-          <!-- Newsletter Form -->
           <form @submit.prevent="subscribeNewsletter" class="space-y-3">
             <div class="relative">
               <input
                 v-model="email"
                 type="email"
-                placeholder="Enter your phone number"
+                placeholder="Enter your email"
                 required
                 class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
               />
@@ -96,17 +90,16 @@
             <button
               type="submit"
               :disabled="isSubscribing"
-              class="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
+              class="w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
-              {{ isSubscribing ? "Subscribing..." : "Subscribe" }}
+              {{ isSubscribing ? "Sending..." : " Send" }}
             </button>
           </form>
 
-          <!-- Contact Info -->
           <div class="space-y-3 pt-4 border-t border-gray-800">
             <div class="flex items-center space-x-3">
               <MapPinIcon class="w-4 h-4 text-gray-500 flex-shrink-0" />
-              <span class="text-gray-400 text-sm">Cleveland, OH</span>
+              <span class="text-gray-400 text-sm">OHIO</span>
             </div>
             <div class="flex items-center space-x-3">
               <PhoneIcon class="w-4 h-4 text-gray-500 flex-shrink-0" />
@@ -116,7 +109,6 @@
         </div>
       </div>
 
-      <!-- Bottom Section -->
       <div class="border-t border-gray-800 py-8">
         <div
           class="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0"
@@ -139,10 +131,9 @@
             </div>
           </div>
 
-          <!-- Back to Top -->
           <button
             @click="scrollToTop"
-            class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors group"
+            class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors group cursor-pointer"
           >
             <span class="text-sm">Back to top</span>
             <ArrowUpIcon
@@ -186,45 +177,31 @@ const socialLinks = [
 ];
 
 const productLinks = [
-  { name: "Features", url: "#" },
-  { name: "Pricing", url: "#" },
-  { name: "Integrations", url: "#" },
-  { name: "API", url: "#" },
-  { name: "Documentation", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
 ];
 
 const resourceLinks = [
-  { name: "Blog", url: "#" },
-  { name: "Help Center", url: "#" },
-  { name: "Community", url: "#" },
-  { name: "Tutorials", url: "#" },
-  { name: "Status", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
 ];
 
 const legalLinks = [
-  { name: "Privacy", url: "#" },
-  { name: "Terms", url: "#" },
-  { name: "Cookies", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
+  { name: "MANGOS", url: "#" },
 ];
 
-// Methods
 const subscribeNewsletter = async () => {
   if (!email.value) return;
 
   isSubscribing.value = true;
-
-  try {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("Newsletter subscription:", email.value);
-    email.value = "";
-    // You could add a success toast here
-  } catch (error) {
-    console.error("Subscription failed:", error);
-    // You could add an error toast here
-  } finally {
-    isSubscribing.value = false;
-  }
 };
 
 const scrollToTop = () => {
@@ -236,7 +213,6 @@ const scrollToTop = () => {
 </script>
 
 <style scoped>
-/* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
   width: 6px;
 }

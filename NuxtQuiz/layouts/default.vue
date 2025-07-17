@@ -2,6 +2,7 @@
   <div>
     <PageHeader />
     <slot />
+    <TheFooter />
   </div>
 </template>
 
