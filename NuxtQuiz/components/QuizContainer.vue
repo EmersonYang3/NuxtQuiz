@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4">
+  <div class="min-h-screen bg-gray-800 flex flex-col items-center py-10 px-4">
     <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
       <QuizCard v-for="quiz in filteredQuizzes" :key="quiz.id" :quiz="quiz" />
     </div>
