@@ -1,7 +1,6 @@
 <template>
   <div class="max-w-2xl mx-auto p-6">
     <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-2xl">
-      <!-- Question Header -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-4">
           <span

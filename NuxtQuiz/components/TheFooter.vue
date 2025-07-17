@@ -170,14 +170,11 @@ import {
   ArrowUpIcon,
 } from "lucide-vue-next";
 
-// Reactive data
 const email = ref("");
 const isSubscribing = ref(false);
 
-// Computed
 const currentYear = computed(() => new Date().getFullYear());
 
-// Data
 const socialLinks = [
   { name: "Twitter", icon: TwitterIcon, url: "#" },
   { name: "Instagram", icon: InstagramIcon, url: "#" },
