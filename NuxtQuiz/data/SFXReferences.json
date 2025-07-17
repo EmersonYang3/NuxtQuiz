@@ -1,18 +1,18 @@
 {
     "Correct": {
-        "Very Easy": "nah",
-        "Easy": "nah",
-        "Medium": "nah",
-        "Hard": "nah",
-        "MANGO": "nah"
+        "Very Easy": "/sfx/correct/Very Easy.mp3",
+        "Easy": "/sfx/correct/Easy.mp3",
+        "Medium": "/sfx/correct/Medium.mp3",
+        "Hard": "/sfx/correct/Hard.mp3",
+        "MANGO": "/sfx/correct/MANGO.mp3"
     },
 
     "Incorrect": {
-        "Very Easy": "nah",
-        "Easy": "nah",
-        "Medium": "nah",
-        "Hard": "nah",
-        "MANGO": "nah"
+        "Very Easy": "/sfx/wrong/Very Easy.mp3",
+        "Easy": "/sfx/wrong/Easy.mp3",
+        "Medium": "/sfx/wrong/Medium.mp3",
+        "Hard": "/sfx/wrong/Hard.mp3",
+        "MANGO": "/sfx/wrong/MANGO.mp3"
     },
 
     "QuizStart": "nah"

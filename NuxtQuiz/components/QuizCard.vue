@@ -25,11 +25,17 @@
 
 <script lang="ts" setup>
 import type { Quiz } from "../utils/types";
+import SFXReferences from "../data/SFXReferences.json";
 
 const emits = defineEmits<{ (e: "select_quiz", quiz_id: number): void }>();
 const props = defineProps<{ quiz: Quiz }>();
 
 function handleSelect() {
+  const AudioReference = SFXReferences.Correct.MANGO;
+  const NewAudio = new Audio(AudioReference);
+
+  NewAudio.play();
+  console.log("SIGMA");
   emits("select_quiz", props.quiz.id);
 }
 
