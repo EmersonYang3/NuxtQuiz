@@ -1,16 +1,15 @@
 <template>
-<<<<<<< HEAD
   <div>
     <NuxtRouteAnnouncer />
     <SearchBar />
     <!-- <NuxtWelcome /> -->
     <NuxtPage />
   </div>
-</template>
-=======
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <QuizCard />
+  <QuestionCard />
 </template>
 
 <script lang="ts" setup>
@@ -23,4 +22,3 @@ console.log("yeah");
 console.log(data.value);
 console.log("after");
 </script>
->>>>>>> d7b497b36af62b67798ae6cf3c5a4597edffc8bc
