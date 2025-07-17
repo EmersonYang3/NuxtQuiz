@@ -1,0 +1,19 @@
+{
+    "Correct": {
+        "Very Easy": "nah",
+        "Easy": "nah",
+        "Medium": "nah",
+        "Hard": "nah",
+        "MANGO": "nah"
+    },
+
+    "Incorrect": {
+        "Very Easy": "nah",
+        "Easy": "nah",
+        "Medium": "nah",
+        "Hard": "nah",
+        "MANGO": "nah"
+    },
+
+    "QuizStart": "nah"
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-black pt-[15px]">
+  <div class="bg-black pt-[15px]">
     <div class="relative w-full max-w-md mx-auto">
       <input
         v-model="query"

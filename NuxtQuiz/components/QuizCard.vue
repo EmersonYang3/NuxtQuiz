@@ -1,10 +1,11 @@
 <template>
   <div
     class="bg-gray-900 text-white rounded-md w-full max-w-3xl flex overflow-hidden shadow-lg cursor-pointer hover:scale-[1.02] transition-transform duration-300 transform active:scale-[0.98] select-none flex-row items-center gap-4"
+    @click="handleSelect"
   >
     <div class="w-1/6">
       <img
-        :src="fillerQuiz.imageURL"
+        :src="props.quiz.imageUrl"
         alt="Quiz image"
         class="object-cover w-full h-full"
         draggable="false"
@@ -13,25 +14,26 @@
 
     <div class="w-5/6 flex flex-col justify-between p-6">
       <h2 class="text-2xl font-bold mb-4">
-        {{ fillerQuiz.questionText }}
+        {{ props.quiz.title }}
       </h2>
       <p>
-        {{ fillerQuiz.questionDescription }}
+        {{ props.quiz.description }}
       </p>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import type { Quiz } from "../utils/types";
 
-const fillerQuiz = ref({
-  questionText: "67 Quiz",
-  questionDescription:
-    "This is a filler quiz to demonstrate the layout. It has no real questions or answers.",
-  imageURL:
-    "https://i.redd.it/i-got-bored-so-i-decided-to-draw-a-random-image-on-the-v0-4ig97vv85vjb1.png?width=1280&format=png&auto=webp&s=7177756d1f393b6e093596d06e1ba539f723264b",
-});
+const emits = defineEmits<{ (e: "select_quiz", quiz_id: number): void }>();
+const props = defineProps<{ quiz: Quiz }>();
+
+function handleSelect() {
+  emits("select_quiz", props.quiz.id);
+}
+
+console.log(props.quiz);
 </script>
 
 <style scoped>

@@ -1,9 +1,13 @@
 <template>
-  <div class="min-h-screen bg-gray-800 flex flex-col items-center py-10 px-4">
+  <div class="min-h-screen bg-black flex flex-col items-center py-10 px-4">
     <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
-      <QuizCard v-for="quiz in filteredQuizzes" :key="quiz.id" :quiz="quiz" />
+      <QuizCard
+        v-for="quiz in filteredQuizzes"
+        :quiz="quiz"
+        @select_quiz="handleSelect"
+      />
     </div>
-    <p class="text-black">{{ filteredQuizzes }}</p>
+    <p class="text-white">{{ filteredQuizzes }}</p>
   </div>
 </template>
 
@@ -28,7 +32,13 @@ const filteredQuizzes = computed(() => {
     threshold: 0.4,
   });
 
+  console.log(quizzes);
+
   const results = fuse.search(search);
   return results.map((result) => result.item);
 });
+
+function handleSelect(quiz_id: number) {
+  console.log(quiz_id);
+}
 </script>
