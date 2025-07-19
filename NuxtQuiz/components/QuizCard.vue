@@ -1,19 +1,21 @@
 <template>
   <div
-    class="bg-gray-900 text-white rounded-md w-full max-w-3xl flex overflow-hidden shadow-lg cursor-pointer hover:scale-[1.02] transition-transform duration-300 transform active:scale-[0.98] select-none flex-row items-center gap-4"
+    class="bg-slate-900 text-white rounded-md w-full max-w-3xl flex overflow-hidden shadow-lg cursor-pointer hover:scale-[1.02] transition-transform duration-300 transform active:scale-[0.98] select-none flex-row items-center gap-4"
     @click="handleSelect"
+    @mouseenter="handleHover"
   >
-    <div class="w-1/6">
+  <!-- Card Image -->
+    <div class="w-1/6 m-2 ml-8">
       <img
         :src="props.quiz.imageUrl"
         alt="Quiz image"
-        class="object-cover w-full h-full"
+        class="object-cover w-full h-full rounded-md"
         draggable="false"
       />
     </div>
-
-    <div class="w-5/6 flex flex-col justify-between p-6">
-      <h2 class="text-2xl font-bold mb-4">
+<!-- Card Contents -->
+    <div class="w-5/6 flex flex-col justify-between py-4">
+      <h2 class="text-2xl font-bold mb-2">
         {{ props.quiz.title }}
       </h2>
       <p>
@@ -37,6 +39,12 @@ function handleSelect() {
   NewAudio.play();
   console.log("SIGMA");
   emits("select_quiz", props.quiz.id);
+}
+
+function handleHover(){
+  const HoverAudio =  new Audio('/sfx/site/hover.mp3')
+  HoverAudio.play();
+  console.log("Hovered Card")
 }
 
 console.log(props.quiz);
