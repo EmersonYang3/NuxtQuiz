@@ -1,7 +1,9 @@
 <template>
-  <SearchBar @search_query="handleSearchQuery" />
-  <QuizContainer :searchfilter="searchfilter" />
-  <QuestionCard/>
+  <div>
+    <SearchBar @search_query="handleSearchQuery" />
+    <QuizContainer :searchfilter="searchfilter" />
+    <QuestionCard />
+  </div>
 </template>
 
 <script lang="ts" setup>

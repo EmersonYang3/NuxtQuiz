@@ -15,6 +15,8 @@
 import type { Quiz } from "~/utils/types";
 import Fuse from "fuse.js";
 
+const router = useRouter();
+
 const props = defineProps<{ searchfilter: string }>();
 
 const { data: quizzes } = await useFetch<Quiz[]>(
@@ -40,5 +42,9 @@ const filteredQuizzes = computed(() => {
 
 function handleSelect(quiz_id: number) {
   console.log(quiz_id);
+  router.push({
+    name: "quiz-quiz_id",
+    params: { quiz_id },
+  });
 }
 </script>
