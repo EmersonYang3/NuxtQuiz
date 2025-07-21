@@ -1,10 +1,12 @@
 <template>
-  <div class = "question-card bg-white">
-    <h1>{{ question.title }}</h1>
+  <div class="question-card bg-white p-4 rounded shadow">
+    <h1 class="text-xl font-bold mb-4">{{ question.text }}</h1>
+
     <ul>
-        <li 
-        v-for="(choice, choiceId) in question.choices" 
-        :key="choiceId"
+      <li
+        v-for="(choice, index) in choices"
+        :key="index"
+        @click="$emit('answer-selected', choice)"
         class="p-2 border mb-2 cursor-pointer hover:bg-gray-100"
       >
         {{ choice.text }}
@@ -14,30 +16,15 @@
   </div>
 </template>
 
-<script setup lang ="ts">
+<script setup lang="ts">
+import type { Question, Choice } from "../utils/types";
 
-// Filler question
-  const question = {
-    title:"Mango",
-    choices:{
-      1:{
-        text:"Sigma",
-        correct:true,
-      },
-      2:{
-        text:"Ohio",
-        correct:false,
-      },
-      3:{
-        text:"Jimmy",
-        correct:false,
-      }
-    }
-  }
+defineProps<{
+  question: Question;
+  choices: Choice[];
+}>();
 
-  import type {Question, Choice} from "../utils/types";
-  const { data: Question } = await useFetch<Quiz[]>(
-  "http://127.0.0.1:8000/api/quizzes/"
-);
+defineEmits<{
+  (e: "answer-selected", choice: Choice): void;
+}>();
 </script>
-

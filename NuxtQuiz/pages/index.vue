@@ -2,7 +2,6 @@
   <div>
     <SearchBar @search_query="handleSearchQuery" />
     <QuizContainer :searchfilter="searchfilter" />
-    <QuestionCard />
   </div>
 </template>
 
