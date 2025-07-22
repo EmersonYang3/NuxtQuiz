@@ -7,7 +7,6 @@
         @select_quiz="handleSelect"
       />
     </div>
-    <p class="text-white">{{ filteredQuizzes }}</p>
   </div>
 </template>
 
@@ -42,6 +41,7 @@ const filteredQuizzes = computed(() => {
 
 function handleSelect(quiz_id: number) {
   console.log(quiz_id);
+  console.log(filteredQuizzes);
   router.push({
     name: "quiz-quiz_id",
     params: { quiz_id },

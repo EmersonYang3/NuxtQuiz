@@ -1,16 +1,10 @@
 <template>
-  <div class="question-card bg-white p-4 rounded shadow">
-    <h1 class="text-xl font-bold mb-4">{{ question.text }}</h1>
-
+  <div class="question-card bg-white p-4 rounded shadow mb-6">
+    <h1 class="text-xl font-bold mb-4">{{ props.question.text }}</h1>
     <ul>
-      <li
-        v-for="(choice, index) in choices"
-        :key="index"
-        @click="$emit('answer-selected', choice)"
-        class="p-2 border mb-2 cursor-pointer hover:bg-gray-100"
-      >
-        {{ choice.text }}
-        <span v-if="choice.correct" class="ml-2 text-green-500">✓</span>
+      <li v-for="(choice, index) in props.choices" :key="index">
+        {{ choice.text }}  <!-- Now accessing .text on each choice -->
+        <span v-if="showAnswers && choice.correct" class="ml-2 text-green-500">✓</span>
       </li>
     </ul>
   </div>
@@ -19,9 +13,11 @@
 <script setup lang="ts">
 import type { Question, Choice } from "../utils/types";
 
-defineProps<{
+const props = defineProps<{
   question: Question;
   choices: Choice[];
+  showAnswers?: boolean;
+  selectedChoice?: Choice | null;
 }>();
 
 defineEmits<{

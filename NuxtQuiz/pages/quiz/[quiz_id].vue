@@ -1,7 +1,7 @@
 <template>
-  <p class="text-white">
-    {{ quizId }}
-  </p>
+  <div>
+    <QuestionContainer :quiz-id="quizId" />
+  </div>
 </template>
 
 <script lang="ts" setup>
