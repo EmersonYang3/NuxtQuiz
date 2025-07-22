@@ -33,15 +33,11 @@ const filteredQuizzes = computed(() => {
     threshold: 0.4,
   });
 
-  console.log(quizzes);
-
   const results = fuse.search(search);
   return results.map((result) => result.item);
 });
 
 function handleSelect(quiz_id: number) {
-  console.log(quiz_id);
-  console.log(filteredQuizzes);
   router.push({
     name: "quiz-quiz_id",
     params: { quiz_id },

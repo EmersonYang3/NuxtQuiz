@@ -43,6 +43,4 @@ function handleHover() {
   const HoverAudio = new Audio("/sfx/site/hover.mp3");
   HoverAudio.play();
 }
-
-console.log(props.quiz);
 </script>
