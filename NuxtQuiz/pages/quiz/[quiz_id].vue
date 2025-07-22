@@ -5,8 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { Question } from "#imports";
-
 const route = useRoute();
 const quizId = Number(route.params.quiz_id);
 

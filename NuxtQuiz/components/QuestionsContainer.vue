@@ -10,9 +10,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { Question, Choice } from "#imports";
-import QuestionCard from "./QuestionCard.vue";
-
 const props = defineProps<{ questions: Question[] }>();
 
 const currentQuestionIndex = ref(0);

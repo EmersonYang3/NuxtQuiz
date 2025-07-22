@@ -16,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
 import { Search as SearchIcon } from "lucide-vue-next";
 
 const emits = defineEmits<{ (e: "search_query", query: string): void }>();

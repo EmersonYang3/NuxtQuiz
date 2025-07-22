@@ -25,7 +25,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { Quiz } from "#imports";
 import SFXReferences from "../data/SFXReferences.json";
 
 const emits = defineEmits<{ (e: "select_quiz", quiz_id: number): void }>();

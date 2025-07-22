@@ -11,7 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Quiz } from "#imports";
 import Fuse from "fuse.js";
 
 const router = useRouter();
