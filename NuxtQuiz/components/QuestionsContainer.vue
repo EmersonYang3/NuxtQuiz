@@ -4,7 +4,7 @@
       v-if="choices.length > 0"
       :question="currentQuestion"
       :choices="choices"
-      :show-answers="true"
+      @next-question="HandleNext"
     />
   </div>
 </template>
@@ -41,6 +41,11 @@ async function fetchChoicesForCurrent() {
   } else {
     choices.value = data.value || [];
   }
+}
+
+async function HandleNext() {
+  currentQuestionIndex.value += 1;
+  await fetchChoicesForCurrent();
 }
 
 onMounted(fetchChoicesForCurrent);
