@@ -4,7 +4,6 @@
     @click="handleSelect"
     @mouseenter="handleHover"
   >
-  <!-- Card Image -->
     <div class="w-1/6 m-2 ml-8">
       <img
         :src="props.quiz.imageUrl"
@@ -13,7 +12,7 @@
         draggable="false"
       />
     </div>
-<!-- Card Contents -->
+
     <div class="w-5/6 flex flex-col justify-between py-4">
       <h2 class="text-2xl font-bold mb-2">
         {{ props.quiz.title }}
@@ -26,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Quiz } from "../utils/types";
+import type { Quiz } from "#imports";
 import SFXReferences from "../data/SFXReferences.json";
 
 const emits = defineEmits<{ (e: "select_quiz", quiz_id: number): void }>();
@@ -35,23 +34,15 @@ const props = defineProps<{ quiz: Quiz }>();
 function handleSelect() {
   const AudioReference = SFXReferences.Correct.MANGO;
   const NewAudio = new Audio(AudioReference);
-
   NewAudio.play();
-  console.log("SIGMA");
+
   emits("select_quiz", props.quiz.id);
 }
 
-function handleHover(){
-  const HoverAudio =  new Audio('/sfx/site/hover.mp3')
+function handleHover() {
+  const HoverAudio = new Audio("/sfx/site/hover.mp3");
   HoverAudio.play();
-  console.log("Hovered Card")
 }
 
 console.log(props.quiz);
 </script>
-
-<style scoped>
-img {
-  -webkit-user-drag: none;
-}
-</style>
