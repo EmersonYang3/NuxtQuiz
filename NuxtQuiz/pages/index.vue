@@ -1,7 +1,11 @@
 <template>
   <div>
     <SearchBar @search_query="handleSearchQuery" />
-    <QuizContainer :searchfilter="searchfilter" class="mt-8" />
+    <QuizContainer
+      class="mt-8"
+      :searchfilter="searchfilter"
+      @clear-search="handleClearSearch"
+    />
   </div>
 </template>
 
@@ -10,5 +14,9 @@ const searchfilter = ref("");
 
 function handleSearchQuery(query: string) {
   searchfilter.value = query;
+}
+
+function handleClearSearch() {
+  searchfilter.value = "";
 }
 </script>
