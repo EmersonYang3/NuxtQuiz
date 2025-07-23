@@ -216,7 +216,6 @@ function selectChoice(choice: Choice) {
   selected.value = choice;
 }
 
-// Handle submit and play audio with overlay
 async function handleSubmit() {
   if (!selected.value) return;
 
@@ -244,7 +243,6 @@ async function handleSubmit() {
   });
 }
 
-// Next question logic
 function handleNext() {
   showAnswers.value = false;
   submitted.value = false;
