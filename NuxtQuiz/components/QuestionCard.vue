@@ -145,7 +145,9 @@
           :disabled="!selected"
           @click="handleSubmit"
         >
-          <span class="flex items-center justify-center space-x-2">
+          <span
+            class="flex items-center justify-center space-x-2 cursor-pointer"
+          >
             <svg
               v-if="!submitted"
               class="w-5 h-5"
@@ -168,7 +170,7 @@
             'focus:outline-none focus:ring-4 focus:ring-opacity-50',
             !submitted
               ? 'bg-gray-800 cursor-not-allowed text-gray-500'
-              : 'bg-gradient-to-r from-purple-700 to-purple-800 hover:from-purple-800 hover:to-purple-900 hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-0.5 focus:ring-purple-500/50 active:scale-95',
+              : 'bg-gradient-to-r from-purple-700 to-purple-800 hover:from-purple-800 hover:to-purple-900 hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-0.5 focus:ring-purple-500/50 active:scale-95 cursor-pointer',
           ]"
           :disabled="!submitted"
           @click="handleNext"
@@ -190,8 +192,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import type { Question, Choice } from "#imports";
+import DifficultyData from "../data/DifficultyData.json";
+import SFXReferences from "../data/SFXReferences.json";
+
+const isPlayingSFX = ref(false);
 
 const showAnswers = ref(false);
 const submitted = ref(false);
@@ -199,7 +203,7 @@ const submitted = ref(false);
 const props = defineProps<{
   question: Question;
   choices: Choice[];
-  selectedChoice?: { text: string; correct: boolean } | null;
+  selectedChoice?: Choice | null;
 }>();
 
 const emit = defineEmits<{
