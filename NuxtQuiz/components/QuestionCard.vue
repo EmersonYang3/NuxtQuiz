@@ -208,6 +208,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: "next-question"): void;
+  (e: "question-answered", QuestionCorrect: boolean): void;
 }>();
 
 const selected = ref<Choice | null>(props.selectedChoice ?? null);
