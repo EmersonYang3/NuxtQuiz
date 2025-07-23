@@ -11,5 +11,5 @@ html, body {
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--color-off-black);
+    background-color: black;
 }

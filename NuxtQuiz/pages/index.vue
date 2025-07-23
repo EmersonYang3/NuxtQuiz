@@ -1,7 +1,7 @@
 <template>
   <div>
     <SearchBar @search_query="handleSearchQuery" />
-    <QuizContainer :searchfilter="searchfilter" />
+    <QuizContainer :searchfilter="searchfilter" class="mt-8" />
   </div>
 </template>
 
